@@ -21,6 +21,8 @@ async def on_message(message):
 
     fullmessage = message.content.lower()
 
+    logging.info(f'{message.author}: {message.content}')
+
     for character in unallowedcharacters:
         fullmessage = fullmessage.replace(character, '')
 
@@ -30,15 +32,13 @@ async def on_message(message):
     for c in cinco:
         if fullmessage.endswith(str(c)):
             response = 'por el culo te la hinco jefe te falta calle'
-            logging.info(
-                f'Y va y me suelta {message.author}: "{message.content}". ¿Pues sabes qué le dije yo? "{response}".')
+            logging.info(f'El bot, todo un capo: {response}')
             await message.channel.send(response)
 
     for v in uve:
         if fullmessage.endswith(str(v)):
             response = 'en tu culo me entretuve sobrino'
-            logging.info(
-                f'Y va y me suelta {message.author}: "{message.content}". ¿Pues sabes qué le dije yo? "{response}".')
+            logging.info(f'El bot, todo un capo: {response}')
             await message.channel.send(response)
 
 
