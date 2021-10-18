@@ -1,4 +1,3 @@
-import logging
 import os
 import discord
 import dotenv
@@ -6,6 +5,26 @@ import dotenv
 dotenv.load_dotenv()
 
 client = discord.Client()
+
+unallowedcharacters = '._-!¡¿?"\'()'
+
+rimas = [
+    {
+        "line": "Por el culo te la hinco jefe te falta calle",
+        "endsWith": [
+            5,
+            'inco',
+            'inko',
+        ]
+    },
+    {
+        "line": "En tu culo me entretuve chaval venga a estudiar",
+        "endsWith": [
+            'v',
+            'uve',
+        ]
+    }
+]
 
 
 @client.event
@@ -15,10 +34,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    unallowedcharacters = '._-!¡¿?'
-    cinco = [5, 'cinco']
-    uve = ['v', 'uve']
-
     fullmessage = message.content.lower()
 
     for character in unallowedcharacters:
@@ -27,19 +42,12 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    for c in cinco:
-        if fullmessage.endswith(str(c)):
-            print(f'{message.author}: {message.content}')
-            response = 'por el culo te la hinco jefe te falta calle'
-            print(f'El bot, todo un capo: {response}')
-            await message.channel.send(response)
-
-    for v in uve:
-        if fullmessage.endswith(str(v)):
-            print(f'{message.author}: {message.content}')
-            response = 'en tu culo me entretuve sobrino'
-            print(f'El bot, todo un capo: {response}')
-            await message.channel.send(response)
+    for rima in rimas:
+        for ew in rima.get('endsWith'):
+            if fullmessage.endswith(str(ew)):
+                print(f'{message.author}: {message.content}')
+                print(f'El bot, todo un capo: {rima.get("line")}')
+                await message.channel.send(rima.get('line'))
 
 
 client.run(os.getenv('TOKEN'))
