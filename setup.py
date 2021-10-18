@@ -1,7 +1,6 @@
+import logging
 import os
-
 import discord
-
 import dotenv
 
 dotenv.load_dotenv()
@@ -11,7 +10,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    logging.info('We have logged in as {0.user}'.format(client))
 
 
 @client.event
@@ -30,10 +29,17 @@ async def on_message(message):
 
     for c in cinco:
         if fullmessage.endswith(str(c)):
-            await message.channel.send('por el culo te la hinco jefe te falta calle')
+            response = 'por el culo te la hinco jefe te falta calle'
+            logging.info(
+                f'Y va y me suelta {message.author}: "{message.content}". ¿Pues sabes qué le dije yo? "{response}".')
+            await message.channel.send(response)
 
     for v in uve:
         if fullmessage.endswith(str(v)):
-            await message.channel.send('en tu culo me entretuve sobrino')
+            response = 'en tu culo me entretuve sobrino'
+            logging.info(
+                f'Y va y me suelta {message.author}: "{message.content}". ¿Pues sabes qué le dije yo? "{response}".')
+            await message.channel.send(response)
+
 
 client.run(os.getenv('TOKEN'))
