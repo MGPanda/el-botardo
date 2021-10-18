@@ -26,6 +26,23 @@ rimas = [
     }
 ]
 
+gifs = [
+    {
+        "words": [
+            "vieja",
+            "novia",
+            "madre",
+            "abuela",
+            "hermana",
+            "tía",
+        ],
+        "responses": [
+            "Sí pero poca broma con la {word} de {author}",
+            "https://tenor.com/view/jamie-oliver-reacted-holding-show-gif-11864011",
+        ]
+    }
+]
+
 
 @client.event
 async def on_ready():
@@ -49,5 +66,12 @@ async def on_message(message):
                 print(f'El bot, todo un capo: {rima.get("line")}')
                 await message.channel.send(rima.get('line'))
 
+    for gif in gifs:
+        for word in gif.get('words'):
+            if word in fullmessage:
+                for response in gif.get('responses'):
+                    response = response.replace('{author}', str(message.author))
+                    response = response.replace('{word}', word)
+                    await message.channel.send(response)
 
 client.run(os.getenv('TOKEN'))
