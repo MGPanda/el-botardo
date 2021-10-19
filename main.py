@@ -23,7 +23,19 @@ rimas = [
             'v',
             'uve',
         ]
-    }
+    },
+    {
+        "line": "El que tengo aquí colgado mestre",
+        "endsWith": [
+            'ogado',
+        ]
+    },
+    {
+        "line": "La que te va a dar esta figura te la has comido",
+        "endsWith": [
+            'iesta',
+        ]
+    },
 ]
 
 gifs = [
