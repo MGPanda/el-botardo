@@ -36,19 +36,20 @@ rimas = [
             'iesta',
         ]
     },
-     {
-        "line": "{author}, ¿Me he perdido algo?",
-        "endsWith": [
+     
+]
+
+gifs = [
+    {
+        "words": [
             'vacaciones',
             'chapar',
             'chapando',
             'cierro',
             'cerrar',
-        ]
+        ],
+        "responses": "{author}, ¿Me he perdido algo?",
     },
-]
-
-gifs = [
     {
         "words": [
             "vieja",
