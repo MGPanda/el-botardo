@@ -42,11 +42,11 @@ rimas = [
 gifs = [
     {
         "words": [
-            'vacaciones',
-            'chapar',
-            'chapando',
-            'cierro',
-            'cerrar',
+            "vacaciones",
+            "chapar",
+            "chapando",
+            "cierro",
+            "cerrar",
         ],
         "responses": "{author}, ¿Me he perdido algo?",
     },
