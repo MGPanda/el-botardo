@@ -48,7 +48,9 @@ gifs = [
             "cierro",
             "cerrar",
         ],
-        "responses": "{author}, ¿Me he perdido algo?",
+        "responses": [
+            "{author}, ¿Me he perdido algo?"
+        ],
     },
     {
         "words": [
