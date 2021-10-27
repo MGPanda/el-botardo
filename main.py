@@ -36,6 +36,16 @@ rimas = [
             'iesta',
         ]
     },
+     {
+        "line": "{author}, ¿Me he perdido algo?",
+        "endsWith": [
+            'vacaciones',
+            'chapar',
+            'chapando',
+            'cierro',
+            'cerrar',
+        ]
+    },
 ]
 
 gifs = [
